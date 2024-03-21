@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -17,8 +16,7 @@ public class Program
 			if (!Directory.Exists(path))
 				Directory.CreateDirectory(path);
 		}
-		catch { Console.WriteLine("\n\n\t\t\tError in File !\n\n"); }
-
+		catch { Console.WriteLine("\n\n\t\t\tError in Create Directory !\n\n"); }
 		ConsoleKeyInfo key = default;
 
 		try
@@ -47,13 +45,10 @@ public class Program
 					int width = 1920;
 					int height = 1080;
 
-					// Create a bitmap to store the screenshot
 					Bitmap ssh = new Bitmap(width, height);
 
-					// Create a Graphics object from the bitmap
 					using (Graphics graphics = Graphics.FromImage(ssh))
 					{
-						// Capture the screen into the bitmap
 						graphics.CopyFromScreen(0, 0, 0, 0, new Size(width, height));
 					}
 
@@ -66,7 +61,7 @@ public class Program
 
 						endNum = fileName.Substring(start+1, end-start-1);
 
-						endNum = $"{int.Parse(endNum)+1}";
+						endNum = $"{long.Parse(endNum)+1}";
 					}
 
 					string fName = $"{path}\\ScreenShot ({endNum}).jpeg";
