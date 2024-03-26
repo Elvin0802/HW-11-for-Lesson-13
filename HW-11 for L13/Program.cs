@@ -136,10 +136,8 @@ public class Program
 				Console.Write($"\t\t\t{txt}\n\n");
 				Console.ForegroundColor=ConsoleColor.White;
 			}
-			else
-			{
-				Console.Write($"\t\t\t{txt}\n\n");
-			}
+			else Console.Write($"\t\t\t{txt}\n\n");
+			
 			index++;
 		}
 	}
